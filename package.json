@@ -1,14 +1,14 @@
 {
-  "name": "aula",
+  "name": "carrinho-de-compras",
   "version": "1.0.0",
-  "description": "",
+  "description": "Um simples carrinho de compras JavaScript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server"
   },
   "keywords": [],
-  "author": "",
+  "author": "Fábio",
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.6.1"
