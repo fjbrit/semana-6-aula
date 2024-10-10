@@ -1,4 +1,4 @@
-console.log("Olá Seja bem vindo");
+console.log("Olá, seja bem vindo");
 
 // Lista de produtos disponíveis com nome e preço
 const produtosDisponiveis = [
