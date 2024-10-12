@@ -8,10 +8,11 @@ const produtosDisponiveis = [
   { nome: "Boné", preco: 25.0 },
 ];
 
-// Carrinho de compras como um array de objetos
+// Cria um carrinho de compras como um array de objetos
 let carrinho = [];
 
-// Função para adicionar produto ao carrinho
+// Função para adicionar produto ao carrinho, mostra a lista de produtos, pede ao usuário para digitar um nome de produto, 
+//verifica se o produto existe, se sim, pede a quantidade, se a quantidade for maior que 0, o produto é adicionado ao carrinho
 function adicionarProduto() {
   let listaProdutos = "Produtos disponíveis:\n";
   produtosDisponiveis.forEach((produto, index) => {
@@ -40,7 +41,8 @@ function adicionarProduto() {
   }
 }
 
-// Função para visualizar o carrinho
+// Função para visualizar o carrinho, verifica se o mesmo está vazio, se não, cria lista de todos os itens, calcula o total da compra e 
+//mostra a lista de itens e o total para o usuário.
 function visualizarCarrinho() {
   if (carrinho.length === 0) {
     alert("O carrinho está vazio!");
@@ -59,7 +61,8 @@ function visualizarCarrinho() {
   alert(listaCarrinho);
 }
 
-// Função para finalizar a compra (checkout)
+// Função para finalizar a compra (checkout), verifica se o carrinho está vazio, se não, mostra o conteúdo do carrinho, pede confirmação ao usuário para finalizar compra
+// se confirmado, finaliza a compra, neste caso, apenas mostra uma mensagem e limpa o carrinho.
 function finalizarCompra() {
   if (carrinho.length === 0) {
     alert("O carrinho está vazio. Não é possível finalizar a compra.");
@@ -77,7 +80,8 @@ function finalizarCompra() {
   }
 }
 
-// Função principal
+// Função principal que dá fluxo ao programa, mostra a mensagem de boas vindas, entra no loop que continua até o usuário escolher sair
+// Dentro do loop o usuário tem as opções adicionar produto, ver carrinho, finalizar compra e sair.
 function iniciarCompra() {
   alert("Bem-vindo ao Carrinho de Compras Online!\nAqui você pode adicionar produtos, visualizar o carrinho e finalizar sua compra.");
 
