@@ -1,18 +1,15 @@
-console.log("Olá, seja bem vindo");
-
 // Lista de produtos disponíveis com nome e preço
 const produtosDisponiveis = [
-  { nome:"Camisa", preco: 50.0 },
-  { nome:"Calça", preco: 100.0 },
+  { nome: "Camisa", preco: 50.0 },
+  { nome: "Calça", preco: 100.0 },
   { nome: "Sapato", preco: 150.0 },
   { nome: "Boné", preco: 25.0 },
 ];
 
-// Cria um carrinho de compras como um array de objetos
+// Carrinho de compras como um array de objetos
 let carrinho = [];
 
-// Função para adicionar produto ao carrinho, mostra a lista de produtos, pede ao usuário para digitar um nome de produto, 
-//verifica se o produto existe, se sim, pede a quantidade, se a quantidade for maior que 0, o produto é adicionado ao carrinho
+// Função para adicionar produto ao carrinho
 function adicionarProduto() {
   let listaProdutos = "Produtos disponíveis:\n";
   produtosDisponiveis.forEach((produto, index) => {
@@ -41,8 +38,7 @@ function adicionarProduto() {
   }
 }
 
-// Função para visualizar o carrinho, verifica se o mesmo está vazio, se não, cria lista de todos os itens, calcula o total da compra e 
-//mostra a lista de itens e o total para o usuário.
+// Função para visualizar o carrinho
 function visualizarCarrinho() {
   if (carrinho.length === 0) {
     alert("O carrinho está vazio!");
@@ -61,8 +57,36 @@ function visualizarCarrinho() {
   alert(listaCarrinho);
 }
 
-// Função para finalizar a compra (checkout), verifica se o carrinho está vazio, se não, mostra o conteúdo do carrinho, pede confirmação ao usuário para finalizar compra
-// se confirmado, finaliza a compra, neste caso, apenas mostra uma mensagem e limpa o carrinho.
+// Nova função para escolher o método de pagamento
+function escolherMetodoPagamento() {
+  const opcoesPagamento = `
+    Escolha seu método de pagamento:
+    1. Dinheiro
+    2. Cartão
+    3. PIX
+    4. Carteiras digitais (ex: PayPal, Google Pay)
+  `;
+  const escolhaPagamento = prompt(opcoesPagamento);
+
+  switch (escolhaPagamento) {
+    case "1":
+      alert("Você escolheu pagar com Dinheiro.");
+      break;
+    case "2":
+      alert("Você escolheu pagar com Cartão.");
+      break;
+    case "3":
+      alert("Você escolheu pagar com PIX.");
+      break;
+    case "4":
+      alert("Você escolheu pagar com Carteiras digitais.");
+      break;
+    default:
+      alert("Método de pagamento inválido!");
+  }
+}
+
+// Função para finalizar a compra (checkout)
 function finalizarCompra() {
   if (carrinho.length === 0) {
     alert("O carrinho está vazio. Não é possível finalizar a compra.");
@@ -71,8 +95,9 @@ function finalizarCompra() {
 
   visualizarCarrinho();
   const confirmacao = confirm("Deseja finalizar a compra?");
-  
+ 
   if (confirmacao) {
+    escolherMetodoPagamento(); // Mostra os meios de pagamento após a confirmação
     alert("Compra finalizada com sucesso! Obrigado por sua compra.");
     carrinho = []; // Limpa o carrinho após a compra
   } else {
@@ -80,8 +105,7 @@ function finalizarCompra() {
   }
 }
 
-// Função principal que dá fluxo ao programa, mostra a mensagem de boas vindas, entra no loop que continua até o usuário escolher sair
-// Dentro do loop o usuário tem as opções adicionar produto, ver carrinho, finalizar compra e sair.
+// Função principal
 function iniciarCompra() {
   alert("Bem-vindo ao Carrinho de Compras Online!\nAqui você pode adicionar produtos, visualizar o carrinho e finalizar sua compra.");
 
