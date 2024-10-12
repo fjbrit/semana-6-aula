@@ -1,15 +1,17 @@
 // Lista de produtos disponíveis com nome e preço
 const produtosDisponiveis = [
   { nome: "Camisa", preco: 50.0 },
-  { nome: "Calça", preco: 100.0 },
-  { nome: "Sapato", preco: 150.0 },
+  { nome: "Calça", preco: 100.0 }, 
+  { nome: "Sapato", preco: 150.0 }, 
   { nome: "Boné", preco: 25.0 },
 ];
 
 // Carrinho de compras como um array de objetos
 let carrinho = [];
 
-// Função para adicionar produto ao carrinho
+// Função para adicionar produto ao carrinho, mostra a lista de produtos, pede ao usuário para digitar um nome de produto,
+//verifica se o produto existe, se sim, pede a quantidade, se a quantidade for maior que 0, o produto é adicionado ao carrinho
+
 function adicionarProduto() {
   let listaProdutos = "Produtos disponíveis:\n";
   produtosDisponiveis.forEach((produto, index) => {
@@ -38,7 +40,9 @@ function adicionarProduto() {
   }
 }
 
-// Função para visualizar o carrinho
+// Função para visualizar o carrinho, verifica se o mesmo está vazio, se não, cria lista de todos os itens, calcula o total da compra e
+//mostra a lista de itens e o total para o usuário.
+
 function visualizarCarrinho() {
   if (carrinho.length === 0) {
     alert("O carrinho está vazio!");
@@ -107,7 +111,7 @@ function finalizarCompra() {
 
 // Função principal
 function iniciarCompra() {
-  alert("Bem-vindo ao Carrinho de Compras Online!\nAqui você pode adicionar produtos, visualizar o carrinho e finalizar sua compra.");
+  alert("Bem-vindo ao Carrinho de Compras Online!\n \n Aqui você pode adicionar produtos, visualizar o carrinho e finalizar sua compra.");
 
   while (true) {
     const opcao = prompt(
